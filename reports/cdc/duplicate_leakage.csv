@@ -1,0 +1,3 @@
+split,roc_auc,pr_auc,brier
+Random folds (duplicates can cross),0.8092115727726806,0.3983249507299292,0.10021834849446584
+Grouped folds (duplicates kept together),0.7989097467789633,0.37882209708186865,0.1022439517947434

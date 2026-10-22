@@ -1,0 +1,255 @@
+{
+  "split": {
+    "train_rows": 202944,
+    "test_rows": 50736,
+    "train_prevalence": 0.13933400346893723,
+    "test_prevalence": 0.13932907600126143
+  },
+  "lgbm_best_params": {
+    "colsample_bytree": 0.5257393756249946,
+    "learning_rate": 0.021267364327362454,
+    "min_child_samples": 244,
+    "n_estimators": 584,
+    "num_leaves": 26,
+    "reg_lambda": 1.1158372242770278,
+    "subsample": 0.8123738333268545
+  },
+  "final_model": "E. LightGBM, tuned (25-trial random search)",
+  "threshold": 0.10968051967341039,
+  "oof": {
+    "uncalibrated": {
+      "roc_auc": 0.8306041900239721,
+      "pr_auc": 0.4352618948313723,
+      "brier": 0.09646921955291637,
+      "ece": 0.0028083475286075385
+    },
+    "used": {
+      "roc_auc": 0.8306041900239721,
+      "pr_auc": 0.4352618948313723,
+      "brier": 0.09646921955291637,
+      "ece": 0.0028083475286075385
+    },
+    "calibrated": false
+  },
+  "test": {
+    "model": "E. LightGBM, tuned (25-trial random search)",
+    "roc_auc": 0.831890932631344,
+    "pr_auc": 0.43374703630554745,
+    "brier": 0.09647445363980986,
+    "ece": 0.0025446091269290504,
+    "at_threshold": {
+      "threshold": 0.10968051967341039,
+      "recall": 0.8523129155467535,
+      "precision": 0.2832361790146672,
+      "specificity": 0.6508347264524699,
+      "accuracy": 0.6789064963733837,
+      "flagged_per_1000": 419.26836959949543,
+      "tp": 6025,
+      "fp": 15247,
+      "fn": 1044,
+      "tn": 28420
+    },
+    "default_0.5": {
+      "threshold": 0.5,
+      "recall": 0.15617484792757108,
+      "precision": 0.5606907059421026,
+      "specificity": 0.9801909909084664,
+      "accuracy": 0.8653815830968149,
+      "flagged_per_1000": 38.80873541469568,
+      "tp": 1104,
+      "fp": 865,
+      "fn": 5965,
+      "tn": 42802
+    },
+    "ci95": {
+      "roc_auc": [
+        0.8272894489945877,
+        0.8364164207004667
+      ],
+      "pr_auc": [
+        0.42236720275376605,
+        0.44589343377972473
+      ],
+      "brier": [
+        0.0948499160266978,
+        0.09809900817283719
+      ]
+    },
+    "baseline_logreg_raw": {
+      "roc_auc": 0.8215841937772967,
+      "pr_auc": 0.40002748296376633,
+      "brier": 0.09942476810046302,
+      "ece": 0.014281689831585604
+    }
+  },
+  "ablation": [
+    {
+      "model": "A. One question: self-rated general health",
+      "roc_auc_mean": 0.7303,
+      "pr_auc_mean": 0.2632,
+      "brier_mean": NaN,
+      "roc_auc_sd": 0.0019,
+      "pr_auc_sd": 0.0018,
+      "brier_sd": NaN,
+      "delta_auc_vs_B": -0.0918
+    },
+    {
+      "model": "B. Logistic regression, raw features",
+      "roc_auc_mean": 0.8221,
+      "pr_auc_mean": 0.4061,
+      "brier_mean": 0.099,
+      "roc_auc_sd": 0.0019,
+      "pr_auc_sd": 0.0045,
+      "brier_sd": 0.0004,
+      "delta_auc_vs_B": 0.0
+    },
+    {
+      "model": "C. + one-hot answers, BMI spline, burden counts",
+      "roc_auc_mean": 0.8272,
+      "pr_auc_mean": 0.4284,
+      "brier_mean": 0.0972,
+      "roc_auc_sd": 0.0023,
+      "pr_auc_sd": 0.0062,
+      "brier_sd": 0.0005,
+      "delta_auc_vs_B": 0.005
+    },
+    {
+      "model": "D. LightGBM, default settings",
+      "roc_auc_mean": 0.8292,
+      "pr_auc_mean": 0.4311,
+      "brier_mean": 0.0968,
+      "roc_auc_sd": 0.0026,
+      "pr_auc_sd": 0.0061,
+      "brier_sd": 0.0005,
+      "delta_auc_vs_B": 0.0071
+    },
+    {
+      "model": "E. LightGBM, tuned (25-trial random search)",
+      "roc_auc_mean": 0.8306,
+      "pr_auc_mean": 0.4356,
+      "brier_mean": 0.0965,
+      "roc_auc_sd": 0.0025,
+      "pr_auc_sd": 0.0066,
+      "brier_sd": 0.0005,
+      "delta_auc_vs_B": 0.0085
+    },
+    {
+      "model": "F. Soft vote: tuned LightGBM + logistic (C)",
+      "roc_auc_mean": 0.8304,
+      "pr_auc_mean": 0.4351,
+      "brier_mean": 0.0965,
+      "roc_auc_sd": 0.0024,
+      "pr_auc_sd": 0.0066,
+      "brier_sd": 0.0005,
+      "delta_auc_vs_B": 0.0083
+    }
+  ],
+  "models": [
+    {
+      "model": "E. LightGBM, tuned (25-trial random search)",
+      "roc_auc_mean": 0.8306,
+      "pr_auc_mean": 0.4356,
+      "brier_mean": 0.0965,
+      "roc_auc_sd": 0.0025,
+      "pr_auc_sd": 0.0066,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "F. Soft vote: tuned LightGBM + logistic (C)",
+      "roc_auc_mean": 0.8304,
+      "pr_auc_mean": 0.4351,
+      "brier_mean": 0.0965,
+      "roc_auc_sd": 0.0024,
+      "pr_auc_sd": 0.0066,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "XGBoost (hist)",
+      "roc_auc_mean": 0.8296,
+      "pr_auc_mean": 0.4326,
+      "brier_mean": 0.0967,
+      "roc_auc_sd": 0.0026,
+      "pr_auc_sd": 0.006,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "D. LightGBM, default settings",
+      "roc_auc_mean": 0.8292,
+      "pr_auc_mean": 0.4311,
+      "brier_mean": 0.0968,
+      "roc_auc_sd": 0.0026,
+      "pr_auc_sd": 0.0061,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "C. + one-hot answers, BMI spline, burden counts",
+      "roc_auc_mean": 0.8272,
+      "pr_auc_mean": 0.4284,
+      "brier_mean": 0.0972,
+      "roc_auc_sd": 0.0023,
+      "pr_auc_sd": 0.0062,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "Random forest",
+      "roc_auc_mean": 0.8259,
+      "pr_auc_mean": 0.4275,
+      "brier_mean": 0.0973,
+      "roc_auc_sd": 0.0024,
+      "pr_auc_sd": 0.0058,
+      "brier_sd": 0.0004
+    },
+    {
+      "model": "B. Logistic regression, raw features",
+      "roc_auc_mean": 0.8221,
+      "pr_auc_mean": 0.4061,
+      "brier_mean": 0.099,
+      "roc_auc_sd": 0.0019,
+      "pr_auc_sd": 0.0045,
+      "brier_sd": 0.0004
+    }
+  ],
+  "imbalance": [
+    {
+      "model": "No re-weighting",
+      "roc_auc_mean": 0.8306,
+      "pr_auc_mean": 0.4356,
+      "brier_mean": 0.0965,
+      "roc_auc_sd": 0.0025,
+      "pr_auc_sd": 0.0066,
+      "brier_sd": 0.0005
+    },
+    {
+      "model": "Class weights (balanced)",
+      "roc_auc_mean": 0.8306,
+      "pr_auc_mean": 0.4353,
+      "brier_mean": 0.1743,
+      "roc_auc_sd": 0.0025,
+      "pr_auc_sd": 0.0071,
+      "brier_sd": 0.0007
+    },
+    {
+      "model": "Random undersampling of majority",
+      "roc_auc_mean": 0.8294,
+      "pr_auc_mean": 0.4294,
+      "brier_mean": 0.1766,
+      "roc_auc_sd": 0.0024,
+      "pr_auc_sd": 0.0059,
+      "brier_sd": 0.0009
+    }
+  ],
+  "duplicate_leakage": [
+    {
+      "split": "Random folds (duplicates can cross)",
+      "roc_auc": 0.8092,
+      "pr_auc": 0.3983,
+      "brier": 0.1002
+    },
+    {
+      "split": "Grouped folds (duplicates kept together)",
+      "roc_auc": 0.7989,
+      "pr_auc": 0.3788,
+      "brier": 0.1022
+    }
+  ]
+}

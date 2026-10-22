@@ -1,0 +1,30 @@
+check,passed,detail,blocking
+"Row count matches source (253,680)",True,"253,680 rows",True
+Column count (ID + target + 21 features),True,23 columns,True
+No null cells,True,0 nulls,True
+ID is unique,True,unique,True
+Target is binary,True,"positives 35,346 (13.9%)",True
+"HighBP in {0,1}",True,codebook values only,True
+"HighChol in {0,1}",True,codebook values only,True
+"CholCheck in {0,1}",True,codebook values only,True
+"Smoker in {0,1}",True,codebook values only,True
+"Stroke in {0,1}",True,codebook values only,True
+"HeartDiseaseorAttack in {0,1}",True,codebook values only,True
+"PhysActivity in {0,1}",True,codebook values only,True
+"Fruits in {0,1}",True,codebook values only,True
+"Veggies in {0,1}",True,codebook values only,True
+"HvyAlcoholConsump in {0,1}",True,codebook values only,True
+"AnyHealthcare in {0,1}",True,codebook values only,True
+"NoDocbcCost in {0,1}",True,codebook values only,True
+"DiffWalk in {0,1}",True,codebook values only,True
+"Sex in {0,1}",True,codebook values only,True
+"BMI integer in [12, 98]",True,observed 12–98,True
+"GenHlth integer in [1, 5]",True,observed 1–5,True
+"MentHlth integer in [0, 30]",True,observed 0–30,True
+"PhysHlth integer in [0, 30]",True,observed 0–30,True
+"Age integer in [1, 13]",True,observed 1–13,True
+"Education integer in [1, 6]",True,observed 1–6,True
+"Income integer in [1, 8]",True,observed 1–8,True
+Duplicate rows (excluding ID),True,"24,206 (9.5%); kept, but grouped so copies never cross train/test",False
+Identical answers with different labels,True,"1,566 answer patterns appear with both labels (irreducible noise)",False
+Implausible BMI (<15 or >70),True,"652 rows (0.26%); clipped to [15, 70] for linear models",False

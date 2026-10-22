@@ -1,0 +1,11 @@
+check,passed,detail,blocking
+Row count matches source (768),True,768 rows,True
+No null cells,True,0 nulls,True
+Target is binary,True,positives 268 (34.9%),True
+No negative values,True,all values ≥ 0,True
+No duplicate rows,True,0 duplicates,True
+Glucose: zeros are missing values,True,5 zeros (0.7%) recoded to missing,False
+BloodPressure: zeros are missing values,True,35 zeros (4.6%) recoded to missing,False
+SkinThickness: zeros are missing values,True,227 zeros (29.6%) recoded to missing,False
+Insulin: zeros are missing values,True,374 zeros (48.7%) recoded to missing,False
+BMI: zeros are missing values,True,11 zeros (1.4%) recoded to missing,False

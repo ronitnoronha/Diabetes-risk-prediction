@@ -1,0 +1,272 @@
+{
+  "notebook_reported_auc": 0.828,
+  "notebook_method_50_splits": {
+    "mean": 0.8167703703703704,
+    "min": 0.7505555555555555,
+    "max": 0.8703703703703705,
+    "sd": 0.026483920115635412
+  },
+  "ablation": [
+    {
+      "model": "A. Notebook model, re-tested without leakage",
+      "roc_auc_mean": 0.817,
+      "pr_auc_mean": 0.6819,
+      "brier_mean": 0.1858,
+      "roc_auc_sd": 0.0284,
+      "pr_auc_sd": 0.048,
+      "brier_sd": 0.0214,
+      "delta_auc_vs_A": 0.0,
+      "p_value_vs_A": NaN
+    },
+    {
+      "model": "B. Logistic regression, zeros left as values",
+      "roc_auc_mean": 0.8291,
+      "pr_auc_mean": 0.7222,
+      "brier_mean": 0.1579,
+      "roc_auc_sd": 0.0284,
+      "pr_auc_sd": 0.0461,
+      "brier_sd": 0.0134,
+      "delta_auc_vs_A": 0.0121,
+      "p_value_vs_A": 0.3628
+    },
+    {
+      "model": "C. + zeros treated as missing (median)",
+      "roc_auc_mean": 0.8354,
+      "pr_auc_mean": 0.7217,
+      "brier_mean": 0.1572,
+      "roc_auc_sd": 0.0275,
+      "pr_auc_sd": 0.0473,
+      "brier_sd": 0.014,
+      "delta_auc_vs_A": 0.0184,
+      "p_value_vs_A": 0.1059
+    },
+    {
+      "model": "D. + missing-value indicators",
+      "roc_auc_mean": 0.8321,
+      "pr_auc_mean": 0.7213,
+      "brier_mean": 0.1579,
+      "roc_auc_sd": 0.0269,
+      "pr_auc_sd": 0.0466,
+      "brier_sd": 0.0138,
+      "delta_auc_vs_A": 0.0151,
+      "p_value_vs_A": 0.219
+    },
+    {
+      "model": "E. + clinical threshold features",
+      "roc_auc_mean": 0.8289,
+      "pr_auc_mean": 0.7235,
+      "brier_mean": 0.1593,
+      "roc_auc_sd": 0.0277,
+      "pr_auc_sd": 0.0461,
+      "brier_sd": 0.014,
+      "delta_auc_vs_A": 0.0119,
+      "p_value_vs_A": 0.3292
+    },
+    {
+      "model": "F. + notebook's 10 engineered features",
+      "roc_auc_mean": 0.8409,
+      "pr_auc_mean": 0.7288,
+      "brier_mean": 0.1541,
+      "roc_auc_sd": 0.0262,
+      "pr_auc_sd": 0.0467,
+      "brier_sd": 0.0138,
+      "delta_auc_vs_A": 0.0239,
+      "p_value_vs_A": 0.0216
+    },
+    {
+      "model": "G. Splines for age and BMI (instead of D\u2013F)",
+      "roc_auc_mean": 0.8462,
+      "pr_auc_mean": 0.7317,
+      "brier_mean": 0.1522,
+      "roc_auc_sd": 0.0251,
+      "pr_auc_sd": 0.0448,
+      "brier_sd": 0.013,
+      "delta_auc_vs_A": 0.0292,
+      "p_value_vs_A": 0.003
+    },
+    {
+      "model": "H. + tuned regularisation (nested CV)",
+      "roc_auc_mean": 0.8485,
+      "pr_auc_mean": 0.7318,
+      "brier_mean": 0.1515,
+      "roc_auc_sd": 0.0258,
+      "pr_auc_sd": 0.0479,
+      "brier_sd": 0.0139,
+      "delta_auc_vs_A": 0.0315,
+      "p_value_vs_A": 0.0013
+    }
+  ],
+  "models": [
+    {
+      "model": "Logistic regression (final)",
+      "roc_auc_mean": 0.8462,
+      "pr_auc_mean": 0.7317,
+      "brier_mean": 0.1522,
+      "roc_auc_sd": 0.0251,
+      "pr_auc_sd": 0.0448,
+      "brier_sd": 0.013,
+      "p_value_vs_final": NaN
+    },
+    {
+      "model": "Stacking: logistic + forest + XGBoost",
+      "roc_auc_mean": 0.8446,
+      "pr_auc_mean": 0.7279,
+      "brier_mean": 0.154,
+      "roc_auc_sd": 0.0252,
+      "pr_auc_sd": 0.0447,
+      "brier_sd": 0.0131,
+      "p_value_vs_final": 0.6909
+    },
+    {
+      "model": "Soft vote: logistic + shallow XGBoost",
+      "roc_auc_mean": 0.8428,
+      "pr_auc_mean": 0.7267,
+      "brier_mean": 0.1535,
+      "roc_auc_sd": 0.0248,
+      "pr_auc_sd": 0.0439,
+      "brier_sd": 0.0129,
+      "p_value_vs_final": 0.4634
+    },
+    {
+      "model": "Logistic regression, notebook features",
+      "roc_auc_mean": 0.8409,
+      "pr_auc_mean": 0.7288,
+      "brier_mean": 0.1541,
+      "roc_auc_sd": 0.0262,
+      "pr_auc_sd": 0.0467,
+      "brier_sd": 0.0138,
+      "p_value_vs_final": 0.129
+    },
+    {
+      "model": "Random forest",
+      "roc_auc_mean": 0.8387,
+      "pr_auc_mean": 0.7208,
+      "brier_mean": 0.1552,
+      "roc_auc_sd": 0.0266,
+      "pr_auc_sd": 0.0483,
+      "brier_sd": 0.0125,
+      "p_value_vs_final": 0.2154
+    },
+    {
+      "model": "LightGBM, small leaves",
+      "roc_auc_mean": 0.8327,
+      "pr_auc_mean": 0.7083,
+      "brier_mean": 0.1595,
+      "roc_auc_sd": 0.027,
+      "pr_auc_sd": 0.045,
+      "brier_sd": 0.0144,
+      "p_value_vs_final": 0.0608
+    },
+    {
+      "model": "SVM (RBF kernel)",
+      "roc_auc_mean": 0.8313,
+      "pr_auc_mean": 0.7216,
+      "brier_mean": 0.1608,
+      "roc_auc_sd": 0.0254,
+      "pr_auc_sd": 0.044,
+      "brier_sd": 0.0122,
+      "p_value_vs_final": 0.0519
+    },
+    {
+      "model": "XGBoost, shallow (native missing)",
+      "roc_auc_mean": 0.8275,
+      "pr_auc_mean": 0.7059,
+      "brier_mean": 0.162,
+      "roc_auc_sd": 0.0269,
+      "pr_auc_sd": 0.0459,
+      "brier_sd": 0.0145,
+      "p_value_vs_final": 0.0466
+    },
+    {
+      "model": "Notebook model (deep XGBoost + SMOTE)",
+      "roc_auc_mean": 0.817,
+      "pr_auc_mean": 0.6819,
+      "brier_mean": 0.1858,
+      "roc_auc_sd": 0.0284,
+      "pr_auc_sd": 0.048,
+      "brier_sd": 0.0214,
+      "p_value_vs_final": 0.003
+    },
+    {
+      "model": "k-nearest neighbours (k=25)",
+      "roc_auc_mean": 0.8113,
+      "pr_auc_mean": 0.6798,
+      "brier_mean": 0.1683,
+      "roc_auc_sd": 0.0288,
+      "pr_auc_sd": 0.0471,
+      "brier_sd": 0.0099,
+      "p_value_vs_final": 0.0014
+    }
+  ],
+  "calibration": [
+    {
+      "model": "Notebook model (SMOTE + deep XGBoost)",
+      "roc_auc": 0.8147,
+      "pr_auc": 0.6726,
+      "brier": 0.1863,
+      "ece": 0.1172
+    },
+    {
+      "model": "Logistic, class-balanced",
+      "roc_auc": 0.8458,
+      "pr_auc": 0.7193,
+      "brier": 0.1616,
+      "ece": 0.0984
+    },
+    {
+      "model": "Logistic (final)",
+      "roc_auc": 0.8454,
+      "pr_auc": 0.7164,
+      "brier": 0.1526,
+      "ece": 0.0348
+    },
+    {
+      "model": "Logistic + Platt scaling",
+      "roc_auc": 0.8448,
+      "pr_auc": 0.7155,
+      "brier": 0.1528,
+      "ece": 0.0318
+    }
+  ],
+  "threshold": [
+    {
+      "index": "Final model, threshold for 85% recall",
+      "threshold": 0.2634,
+      "recall": 0.8424,
+      "precision": 0.5837,
+      "specificity": 0.6756,
+      "accuracy": 0.7338,
+      "flagged_per_1000": 505.2016,
+      "tp": 45.16,
+      "fp": 32.44,
+      "fn": 8.44,
+      "tn": 67.56
+    },
+    {
+      "index": "Final model, default 0.5",
+      "threshold": 0.5,
+      "recall": 0.5612,
+      "precision": 0.7243,
+      "specificity": 0.8836,
+      "accuracy": 0.7711,
+      "flagged_per_1000": 271.6374,
+      "tp": 30.08,
+      "fp": 11.64,
+      "fn": 23.52,
+      "tn": 88.36
+    },
+    {
+      "index": "Notebook model, threshold for 85% recall",
+      "threshold": 0.1632,
+      "recall": 0.8634,
+      "precision": 0.5628,
+      "specificity": 0.6372,
+      "accuracy": 0.7161,
+      "flagged_per_1000": 537.5129,
+      "tp": 46.28,
+      "fp": 36.28,
+      "fn": 7.32,
+      "tn": 63.72
+    }
+  ]
+}
