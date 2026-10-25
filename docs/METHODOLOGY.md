@@ -133,7 +133,31 @@ on purpose: accuracy is the wrong goal for screening.
 
 ![Threshold](../reports/figures/pima_threshold.png)
 
-## 1.8 Explainability (`reports/pima/odds_ratios.csv`, `permutation_importance.csv`)
+## 1.8 Every metric, old vs new (`reports/pima/old_vs_new_all_metrics.csv`)
+
+Both models leak-free, on the same 50 folds. Threshold-dependent metrics are shown at the default 0.5 and
+at each model's own best-F1 threshold, chosen on inner folds only.
+
+| Metric | Old @ 0.5 | New @ 0.5 | Old @ best-F1 | New @ best-F1 |
+|---|---|---|---|---|
+| Accuracy | 74.5% | **77.1%** | 72.3% | **75.2%** |
+| Precision | 62.4% | **71.6%** | 57.3% | **61.2%** |
+| Recall | **68.6%** | 57.8% | **83.7%** | 80.6% |
+| Specificity | 77.7% | **87.5%** | 66.1% | **72.3%** |
+| F1 | **0.652** | 0.637 | 0.678 | **0.694** |
+| ROC-AUC | 0.817 | **0.849** | 0.817 | **0.849** |
+| PR-AUC | 0.682 | **0.732** | 0.682 | **0.732** |
+| Brier | 0.186 | **0.151** | 0.186 | **0.151** |
+
+The old model's higher recall at 0.5 is an artefact of SMOTE: training on synthetic 50/50 data inflates
+its probabilities, so its 0.5 cut-off behaves like a lower threshold. Compared at each model's best
+threshold, or at the same 85% recall (section 1.7), the new model is better on accuracy, precision,
+specificity and F1.
+
+On the notebook's original 154-patient split, the old model scores 75.3% accuracy once leakage is removed,
+not the 79.9% the notebook reported.
+
+## 1.9 Explainability (`reports/pima/odds_ratios.csv`, `permutation_importance.csv`)
 
 | Feature | Odds ratio per 1 SD | ROC-AUC drop when shuffled |
 |---|---|---|
